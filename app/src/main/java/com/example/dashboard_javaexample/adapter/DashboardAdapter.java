@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dashboard_javaexample.R;
+import com.example.dashboard_javaexample.listener.DashboardListener;
 import com.example.dashboard_javaexample.model.DashboardModel;
 
 import java.util.List;
@@ -14,9 +15,11 @@ import java.util.List;
 
 public class DashboardAdapter extends RecyclerView.Adapter<DashboardViewHolder> {
     List<DashboardModel> models;
+    DashboardListener listener;
 
-    public DashboardAdapter(List<DashboardModel> models) {
+    public DashboardAdapter(List<DashboardModel> models, DashboardListener listener) {
         this.models = models;
+        this.listener = listener;
     }
 
     @NonNull
@@ -27,7 +30,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull DashboardViewHolder holder, int position) {
-        holder.bindDataViews(models.get(position));
+        holder.bindDataViews(models.get(position),listener);
     }
 
     @Override

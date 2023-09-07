@@ -5,15 +5,17 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.dashboard_javaexample.R;
 import com.example.dashboard_javaexample.adapter.DashboardAdapter;
+import com.example.dashboard_javaexample.listener.DashboardListener;
 import com.example.dashboard_javaexample.model.DashboardModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DashboardListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +37,15 @@ public class MainActivity extends AppCompatActivity {
         models.add(new DashboardModel("  Uncharted 4: A Thief's End", "Action", "96", "https://cdn.zoomg.ir/2016/05/uncharted-4-shakhes-1.jpg?w=1920"));
         models.add(new DashboardModel("  Resident Evil 4", "Action,scary", "90", "https://cdn.sargarme.com/uploads/2021/06/resident-evil-4.jpg"));
 
-        DashboardAdapter adapter = new DashboardAdapter(models);
+        DashboardAdapter adapter = new DashboardAdapter(models,this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1, RecyclerView.VERTICAL, false));
 
 
+    }
+
+    @Override
+    public void setOnClickListener(DashboardModel model) {
+        Toast.makeText(getApplicationContext(),model.getName()+" Download Start",Toast.LENGTH_SHORT).show();
     }
 }
