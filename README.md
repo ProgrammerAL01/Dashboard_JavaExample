@@ -1,6 +1,8 @@
 # Dashboard_JavaExample
 Dashboard JavaExample RecyclerView Learning
 
+![android data model](https://github.com/ProgrammerAL01/Dashboard_JavaExample/assets/141438585/fa4053e4-824c-4d79-87cc-9a27f1994915)
+
  
 استفاده از Data Model‌ ها الزامی نیست همانطور که در بالا گفتیم برای هر موجودیت باید یک کلاس ایجاد شود یعنی به این 
 معنی که شما در نظر بگیرید یکسری داده دارید و  می خواهید در دیتابیس Insert یا Update انجام دهید باید یک کلاس از نام متغیر هایی که می خواهید در
